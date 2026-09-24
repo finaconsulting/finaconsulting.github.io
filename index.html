@@ -135,6 +135,21 @@
   .org-chip{font-family:var(--font-body); font-weight:600; font-size:13.5px; padding:9px 15px; border-radius:2px; background:var(--surface); border:1px solid var(--rule-strong); color:var(--ink);}
   @media (max-width:680px){ .bg-grid{grid-template-columns:1fr; gap:8px;} }
 
+  /* ===== LOGO FINA ===== */
+  .brandmark{align-items:center;}
+  .brand-logo{height:30px; width:auto; display:block;}
+  .hero-logo{display:block; width:130px; height:auto; margin:0 0 18px;}
+
+  /* ===== LOGO CÁC CÔNG TY ===== */
+  .org-logos{display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:10px;}
+  .org-logo{display:flex; align-items:center; justify-content:center; height:64px; padding:10px 12px;
+    background:#FFFFFF; border:1px solid var(--rule-strong); border-radius:3px;}
+  .org-logo img{max-width:100%; max-height:40px; width:auto; height:auto; object-fit:contain; display:block;}
+  .org-logo .org-name{display:none; font-weight:600; font-size:13px; color:#1E2A3A; text-align:center; line-height:1.3;}
+  /* Nếu ảnh lỗi / chưa có file → hiện tên công ty thay thế */
+  .org-logo.no-img img{display:none;}
+  .org-logo.no-img .org-name{display:block;}
+
   /* contact / cta */
   .cta{}
   .cta .container{padding-block:56px; text-align:center;}
@@ -152,7 +167,7 @@
 
 <header class="topbar">
   <div class="container">
-    <div class="brandmark"><span class="fina">FINA</span><span class="consulting">CONSULTING</span></div>
+    <div class="brandmark"><img class="brand-logo" src="images/fina-logo.png" alt="FINA Consulting logo" onerror="this.remove()"><span class="fina">FINA</span><span class="consulting">CONSULTING</span></div>
     <nav class="topnav">
       <a href="#services">Services</a>
       <a href="#background">Background</a>
@@ -165,6 +180,7 @@
   <section class="hero">
     <div class="container">
       <div>
+        <img class="hero-logo" src="images/fina-logo.png" alt="FINA Consulting" onerror="this.remove()">
         <p class="eyebrow">Tax · Accounting · Financial Analysis Advisory</p>
         <h1 class="wordmark">FINA<br>CONSULTING</h1>
         <p class="kicker">PROFILE</p>
@@ -248,15 +264,16 @@
         <div>
           <div class="bg-item">
             <h4>Organizations Experience</h4>
-            <div class="chips">
-              <span class="org-chip">AASC</span>
-              <span class="org-chip">EY</span>
-              <span class="org-chip">Kim Dental</span>
-              <span class="org-chip">Asia Dragon</span>
-              <span class="org-chip">Bệnh viện Gia An 115</span>
-              <span class="org-chip">Nova F&amp;B</span>
-              <span class="org-chip">Tiki</span>
-              <span class="org-chip">Yusen Logistics</span>
+            <!-- Đặt file logo vào thư mục images/ đúng tên bên dưới -->
+            <div class="org-logos">
+              <div class="org-logo"><img src="images/aasc.jpg" alt="AASC" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">AASC</span></div>
+              <div class="org-logo"><img src="images/ey.png" alt="EY" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">EY</span></div>
+              <div class="org-logo"><img src="images/kim-dental.png" alt="Kim Dental" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Kim Dental</span></div>
+              <div class="org-logo"><img src="images/asia-dragon.png" alt="Asia Dragon" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Asia Dragon</span></div>
+              <div class="org-logo"><img src="images/gia-an-115.png" alt="Bệnh viện Gia An 115" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Bệnh viện Gia An 115</span></div>
+              <div class="org-logo"><img src="images/nova-fnb.png" alt="Nova F&amp;B" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Nova F&amp;B</span></div>
+              <div class="org-logo"><img src="images/tiki.png" alt="Tiki" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Tiki</span></div>
+              <div class="org-logo"><img src="images/yusen-logistics.png" alt="Yusen Logistics" onerror="this.parentNode.classList.add('no-img')"><span class="org-name">Yusen Logistics</span></div>
             </div>
           </div>
         </div>
